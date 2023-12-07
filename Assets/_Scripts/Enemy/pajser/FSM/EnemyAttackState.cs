@@ -5,15 +5,11 @@ public class EnemyAttackState : EnemyBaseState
     float tempAttackTime;
 
     public override void EnterState(EnemyStateManager enemy){
-        enemy.agent.isStopped = true;
-        enemy.agent.velocity = Vector3.zero;
-        enemy.attackScript.Attack();
-        tempAttackTime = enemy.performAttackTime;
+        enemy.attackScript.Attack(enemy.playerTransform);
+        Debug.Log("State attacking ");
     }
     public override void UpdateState(EnemyStateManager enemy){
-        if(tempAttackTime > 0){
-            tempAttackTime -= Time.deltaTime;
-            // Debug.Log("idel:");
+        if(!enemy.attackScript.attackFinished){
         }
         else{
             if(enemy.playerTransform)

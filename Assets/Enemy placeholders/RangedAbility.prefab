@@ -126,7 +126,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32768
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -149,3 +149,4 @@ MonoBehaviour:
   abilitySpeed: 3
   destroyAfter: 4
   acceleration: 5
+  damage: 10

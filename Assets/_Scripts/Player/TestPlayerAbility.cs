@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingAbility : MonoBehaviour
+public class TestPlayerAbility : MonoBehaviour
 {
-    Rigidbody rb;
+     Rigidbody rb;
     [SerializeField] float abilitySpeed;
     [SerializeField] float destroyAfter;
     [SerializeField] float acceleration;
@@ -34,13 +34,14 @@ public class FlyingAbility : MonoBehaviour
     void OnTriggerEnter(Collider coll){
         var dmgThis = coll.GetComponent<IDamagable>();
         if(dmgThis != null){
-            Debug.Log(dmgThis);
+        // Debug.Log(dmgThis);
             dmgThis.TakeDamage(damage, this.transform);
-            DestroySelf();
+        DestroySelf();
         }
    }
 
     private void DestroySelf(){
         Destroy(this.gameObject);
     }
+
 }

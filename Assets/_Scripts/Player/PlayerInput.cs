@@ -1,7 +1,19 @@
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
+
+    private Player playerScript;
+
+    void Awake(){
+        playerScript = GetComponent<Player>();
+    }
+
     
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)){
+            playerScript.FireAbility();
+        }
+    }
 
     public Vector2 GetMovementVectorNormalized(){
 

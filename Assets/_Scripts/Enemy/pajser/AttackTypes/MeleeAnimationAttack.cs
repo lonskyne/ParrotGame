@@ -31,7 +31,7 @@ public class MeleeAnimationAttack : AttackPlayer
 
     }
 
-    public override void Attack(){
+    public override void Attack(Transform playerTransform){
         StartAttack();
         Invoke("EndAttack", attackDuration);
     }

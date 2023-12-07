@@ -19,7 +19,7 @@ public class AttackPoint : AttackPlayer
         
     }
 
-    public override void Attack(){
+    public override void Attack(Transform playerTransform){
         Invoke("TriggerSpherePointAttack", attackDelay);
     }
 

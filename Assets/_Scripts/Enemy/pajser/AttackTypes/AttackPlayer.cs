@@ -4,11 +4,14 @@ using UnityEngine;
 
 public abstract class AttackPlayer : MonoBehaviour
 {
-    
+    public UnityEngine.AI.NavMeshAgent agent;
     public float range;
-    public float repeatCastAfter;
-    public GameObject abilityObject;
+    public bool attackFinished;
 
-    public abstract void Attack();
+    void Awake(){
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    }
+
+    public abstract void Attack(Transform playerTransform);
 
 }
