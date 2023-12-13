@@ -131,9 +131,6 @@ public class SettingsUI : MonoBehaviour
 
     private bool IntToBool(int toConvert)
     {
-        if(toConvert == 1)
-            return true;
-
-        return false;
+        return (toConvert != 0);
     }
 }
